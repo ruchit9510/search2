@@ -15,12 +15,14 @@ function startRandomSearches() {
     let searchQuery = document.getElementById("searchQuery").value;
     stopFlag = false;
 
+    if (searchQuery.length === 0) {
+        resetSearch();
+        return;  // Exit if there's nothing to search for
+    }
+
     function performSearch() {
         if (stopFlag || searchQuery.length === 0) {
-            if (searchQuery.length === 0) {
-                count = 0;  
-                updateSearchCount();
-            }
+            resetSearch();
             return;
         }
 
@@ -42,7 +44,16 @@ function startRandomSearches() {
 
 function stopSearches() {
     stopFlag = true;
+    resetSearch();
     if (newWin) {
         newWin.close();
     }
 }
+
+// New function to reset search input and count
+function resetSearch() {
+    document.getElementById("searchQuery").value = '';  // Clear the input field
+    count = 0;
+    updateSearchCount();
+}
+
