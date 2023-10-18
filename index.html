@@ -6,21 +6,27 @@
     <title>Custom Bing Search</title>
     <link rel="icon" href="https://i.ibb.co/dKB4TsR/icon.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    
+
 </head>
 <body>
 
-<div class="container">
-    <p>Enter a word or sentence to start the search:</p>
-    <input type="text" id="searchQuery" placeholder="Enter word or sentence">
-    <button onclick="startRandomSearches()">Search</button>
-    <button onclick="stopSearches()">Stop</button>
-    <p>Search Count: <span id="searchCount">0</span></p>
-    <footer>
-        Made by <a href="#" onclick="openRuchitLinks(); return false;" style="color: #777;">Ruchit</a>
-    </footer>
+    <div class="container">
+        <p>Enter a word or sentence to start the search:</p>
+        <form onsubmit="event.preventDefault(); startRandomSearches();">
+            <input type="text" id="searchQuery" placeholder="Enter word or sentence">
+            <button type="submit">Search</button>
+            <button type="button" onclick="stopSearches()">Stop</button>
+        </form>
+        <p>Search Count: <span id="searchCount">0</span></p>
+        <footer>
+            Made by <a href="#" onclick="openRuchitLinks(); return false;" style="color: #777;">Ruchit</a>
+        </footer>
+        <div class="video-label">
+            <a href="https://drive.google.com/file/d/1_VkESNCtPf8dewPx8suHD4sxs012SBHz/view" style="color: #777;" target="_blank" >Video</a>
+        </div>
+    </div>
     
-    
-</div>
 
 <script src="script.js"></script>
 </body>
